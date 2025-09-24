@@ -1,0 +1,159 @@
+<!-- FILE: index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pramuda Dias — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header fade-in">
+    <div class="container header-grid">
+      <div class="profile slide-in-left">
+        <img src="assets/profile-photo.jpg" alt="Pramuda Dias" class="avatar" />
+        <h1>Pramuda Dias</h1>
+        <p class="subtitle">BSc (Hons) Biotechnology — Production Scientist</p>
+        <a class="btn pulse" href="assets/HS25510275_CV.pdf" download>Download Resume (PDF)</a>
+      </div>
+      <nav class="nav slide-in-right">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="card fade-up">
+      <h2>About me</h2>
+      <p>Motivated and skilled biotechnology graduate with strong laboratory skills, seeking a position as a Production Scientist where I can apply my technical expertise and thrive in industrial environments.</p>
+    </section>
+
+    <section id="education" class="card fade-up">
+      <h2>Educational Qualifications</h2>
+      <ul>
+        <li><strong>BSc. (Hons) Biotechnology</strong>, Sri Lanka Institute of Information Technology</li>
+        <li><strong>Advanced Level Examination</strong>, Biological Sciences stream (Physics, Chemistry, Biology)</li>
+        <li><strong>Ordinary Level Examination</strong> — Distinction passes.</li>
+      </ul>
+    </section>
+
+    <section id="experience" class="card fade-up">
+      <h2>Work Experience</h2>
+      <p>No formal industry experience listed in the CV. Use this space to add internships, lab assistant roles or part-time roles you have done.</p>
+    </section>
+
+    <section id="projects" class="card fade-up">
+      <h2>Projects</h2>
+      <ul>
+        <li>Characterization of enzyme X — SDS-PAGE, spectrophotometry.</li>
+        <li>CRISPR-based gene edit simulation — in silico with annotation reports.</li>
+      </ul>
+    </section>
+
+    <section id="skills" class="card fade-up">
+      <h2>Other Skills</h2>
+      <ul>
+        <li>Laboratory techniques: PCR, Gel electrophoresis, Spectrophotometry</li>
+        <li>Software: Adobe Creative Suite</li>
+        <li>Languages: English (Cambridge Assessment — PET Merit, KET Distinction)</li>
+      </ul>
+    </section>
+
+    <section id="hobbies" class="card fade-up">
+      <h2>Hobbies</h2>
+      <p>Reading scientific literature, image editing, and open-source projects.</p>
+    </section>
+
+    <section id="contact" class="card fade-up contact-card">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:pramudadias@gmail.com">pramudadias@gmail.com</a></p>
+      <p>Phone: +94 76 0211 337</p>
+      <p>Address: 46/2/6, Kompayahena Road, Homagama, Godagama</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Pramuda Dias — Built for SC1172.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- FILE: styles.css -->
+:root{
+  --bg:#f4f6fb; 
+  --card:#ffffff; 
+  --accent:#0056d6; 
+  --accent-light:#4d8dff;
+  --muted:#6c757d;
+}
+*{box-sizing:border-box}
+body{font-family:'Inter',sans-serif;margin:0;background:var(--bg);color:#212121;line-height:1.6}
+.container{max-width:1000px;margin:0 auto;padding:1rem}
+.header-grid{display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:1rem}
+.profile{display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem}
+.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+h1{margin:0;font-size:2rem;font-weight:700;color:var(--accent)}
+.subtitle{margin:0;color:var(--muted)}
+.nav ul{list-style:none;padding:0;margin:0;display:flex;gap:1rem}
+.nav a{text-decoration:none;color:var(--accent);font-weight:600;position:relative}
+.nav a::after{content:'';position:absolute;width:0;height:2px;left:0;bottom:-4px;background:var(--accent-light);transition:0.3s}
+.nav a:hover::after{width:100%}
+.btn{display:inline-block;padding:0.6rem 1rem;background:var(--accent);color:#fff;border-radius:30px;text-decoration:none;transition:background 0.3s, transform 0.3s}
+.btn:hover{background:var(--accent-light);transform:translateY(-2px)}
+.card{background:var(--card);padding:1.5rem;margin:1.5rem 0;border-radius:15px;box-shadow:0 2px 12px rgba(0,0,0,0.08);transition:transform 0.3s, box-shadow 0.3s}
+.card:hover{transform:translateY(-5px);box-shadow:0 6px 18px rgba(0,0,0,0.12)}
+.contact-card p{margin:0.25rem 0}
+.site-footer{padding:1rem 0;text-align:center;color:var(--muted)}
+@media(max-width:720px){.header-grid{flex-direction:column;align-items:flex-start}.nav ul{flex-wrap:wrap}}
+
+/* Animations */
+.fade-in{animation:fadeIn 1.2s ease-in}
+.slide-in-left{animation:slideInLeft 1s ease-out}
+.slide-in-right{animation:slideInRight 1s ease-out}
+.fade-up{opacity:0;transform:translateY(20px);animation:fadeUp 1s ease forwards}
+.pulse{animation:pulse 2s infinite}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-50px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(50px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+
+
+<!-- FILE: script.js -->
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// Reveal on scroll
+const faders=document.querySelectorAll('.fade-up');
+const appearOptions={threshold:0.2};
+const appearOnScroll=new IntersectionObserver((entries,observer)=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting)return;
+    entry.target.classList.add('appear');
+    observer.unobserve(entry.target);
+  });
+},appearOptions);
+faders.forEach(fader=>{appearOnScroll.observe(fader)});
