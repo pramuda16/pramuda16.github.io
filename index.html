@@ -1,148 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pramuda Dias - Portfolio</title>
-  <style>
-    /* ===== GENERAL ===== */
-    * {margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth;}
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background:#f7f8fa;
-      color:#111;
-      overflow-x:hidden;
-    }
-    a {text-decoration:none; color:inherit;}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pramuda Dias - Portfolio</title>
+<style>
+  /* ===== GENERAL ===== */
+  * {margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth;}
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background:#0f0f0f;
+    color:#e0e0e0;
+    overflow-x:hidden;
+  }
+  a {text-decoration:none; color:inherit;}
 
-    /* ===== HEADER ===== */
-    header {
-      height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      background: linear-gradient(135deg, #e0f7fa, #ffffff);
-      position:relative;
-      overflow:hidden;
-    }
-    header h1 {
-      font-size:3rem;
-      font-weight:700;
-      color:#0071e3;
-      margin-bottom:10px;
-      opacity:0;
-      transform:translateY(50px);
-      animation:fadeSlide 1s forwards;
-    }
-    header h2 {
-      font-size:1.5rem;
-      font-weight:500;
-      color:#555;
-      opacity:0;
-      transform:translateY(50px);
-      animation:fadeSlide 1s forwards;
-      animation-delay:0.3s;
-    }
-    header p {
-      margin-top:15px;
-      font-size:1rem;
-      color:#777;
-      opacity:0;
-      transform:translateY(50px);
-      animation:fadeSlide 1s forwards;
-      animation-delay:0.6s;
-    }
-    header img.profile-img {
-      width:160px;
-      height:160px;
-      border-radius:50%;
-      margin-top:20px;
-      object-fit:cover;
-      box-shadow:0 10px 25px rgba(0,0,0,0.1);
-      opacity:0;
-      transform:scale(0.8);
-      animation:fadeSlide 1s forwards;
-      animation-delay:0.9s;
-    }
+  /* ===== HEADER ===== */
+  header {
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background: linear-gradient(135deg,#121212,#1a1a1a);
+    position:relative;
+    overflow:hidden;
+  }
+  header img.profile-img {
+    width:160px; height:160px; border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 10px 25px rgba(0,255,255,0.2);
+    margin-bottom:20px;
+    opacity:0; transform:scale(0.8);
+    animation:fadeSlide 1s forwards;
+  }
+  header h1 {
+    font-size:3rem; color:#00fff0; margin-bottom:10px;
+    opacity:0; transform:translateY(50px);
+    animation:fadeSlide 1s forwards; animation-delay:0.3s;
+  }
+  header h2 {
+    font-size:1.5rem; color:#aaa; font-weight:400;
+    opacity:0; transform:translateY(50px);
+    animation:fadeSlide 1s forwards; animation-delay:0.6s;
+  }
+  header p {
+    margin-top:15px; font-size:1rem; color:#777;
+    opacity:0; transform:translateY(50px);
+    animation:fadeSlide 1s forwards; animation-delay:0.9s;
+  }
 
-    /* ===== SECTIONS ===== */
-    section {
-      max-width:900px;
-      margin:70px auto;
-      padding:60px 40px;
-      background:white;
-      border-radius:20px;
-      box-shadow:0 10px 25px rgba(0,0,0,0.05);
-      opacity:0;
-      transform:translateY(50px);
-      transition:all 0.8s ease;
-    }
-    section.visible {opacity:1; transform:translateY(0);}
-    section h2 {
-      text-align:center;
-      font-size:2rem;
-      margin-bottom:25px;
-      color:#0071e3;
-      font-weight:600;
-      position:relative;
-    }
-    section h2::after {
-      content:'';
-      display:block;
-      width:60px;
-      height:3px;
-      background:#00bfa5;
-      margin:10px auto 0;
-      border-radius:2px;
-    }
+  /* ===== UNIQUE LAYOUT ===== */
+  .container {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    max-width:1000px;
+    margin:70px auto;
+    padding:0 20px;
+  }
 
-    /* ===== LISTS ===== */
-    ul {list-style:none; padding:0; margin:0 auto; max-width:700px;}
-    li {
-      margin-bottom:12px;
-      font-size:1rem;
-      padding-left:25px;
-      position:relative;
-      color:#555;
-    }
-    li::before {
-      content:"•";
-      position:absolute;
-      left:0;
-      color:#ff6f61;
-      font-size:1.3rem;
-    }
+  .card {
+    background:#1a1a1a;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,255,255,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity:0; transform:translateY(50px);
+  }
+  .card.visible {opacity:1; transform:translateY(0);}
+  .card:hover {transform:translateY(-5px); box-shadow:0 15px 30px rgba(0,255,255,0.3);}
 
-    /* ===== BUTTON ===== */
-    .button {
-      display:inline-block;
-      padding:12px 30px;
-      margin-top:25px;
-      background: linear-gradient(135deg,#0071e3,#00bfa5);
-      color:white;
-      font-size:1rem;
-      font-weight:500;
-      border-radius:12px;
-      transition:all 0.3s ease;
-    }
-    .button:hover {
-      background: linear-gradient(135deg,#00bfa5,#0071e3);
-      transform:translateY(-3px) scale(1.03);
-    }
+  .card h2 {
+    color:#00fff0;
+    font-size:1.8rem; margin-bottom:15px;
+    position:relative;
+  }
+  .card h2::after {
+    content:'';
+    display:block;
+    width:50px; height:3px; background:#ff6f61;
+    margin-top:5px; border-radius:2px;
+  }
+  .card ul {list-style:none; margin-top:10px;}
+  .card ul li {
+    margin-bottom:10px; font-size:1rem; padding-left:20px;
+    position:relative; color:#ccc;
+  }
+  .card ul li::before {
+    content:"•"; position:absolute; left:0; color:#00fff0; font-size:1.2rem;
+  }
 
-    /* ===== CONTACT ===== */
-    .contact p {text-align:center;font-size:1rem;margin-bottom:8px;color:#555;}
+  /* RESUME BUTTON */
+  .button {
+    display:inline-block; padding:12px 30px;
+    background: linear-gradient(135deg,#00fff0,#ff6f61);
+    color:#0f0f0f; font-weight:600; border-radius:12px;
+    transition:transform 0.3s ease, background 0.3s ease;
+    margin-top:20px;
+  }
+  .button:hover {
+    transform:scale(1.05); background: linear-gradient(135deg,#ff6f61,#00fff0);
+  }
 
-    /* ===== ANIMATION ===== */
-    @keyframes fadeSlide {0%{opacity:0;transform:translateY(50px);}100%{opacity:1;transform:translateY(0);}}
-    @media(max-width:768px){
-      header h1{font-size:2.2rem;}
-      header h2{font-size:1.2rem;}
-      section{padding:40px 20px;}
-    }
-  </style>
+  /* CONTACT SECTION */
+  .contact {
+    max-width:800px; margin:70px auto; padding:50px 30px;
+    background:#1a1a1a; border-radius:20px;
+    text-align:center; box-shadow:0 10px 25px rgba(0,255,255,0.1);
+    opacity:0; transform:translateY(50px);
+  }
+  .contact.visible {opacity:1; transform:translateY(0);}
+  .contact p {margin-bottom:10px; color:#ccc;}
+
+  @keyframes fadeSlide {0%{opacity:0;transform:translateY(50px);}100%{opacity:1;transform:translateY(0);}}
+
+  @media(max-width:768px){
+    .container {grid-template-columns:1fr; gap:30px;}
+    header h1 {font-size:2.2rem;} header h2 {font-size:1.2rem;}
+  }
+</style>
 </head>
 <body>
 
@@ -154,68 +132,72 @@
     <p>Email: pramudadias@gmail.com | Phone: ‪+94 76 0211 337‬</p>
   </header>
 
-  <!-- ABOUT ME -->
-  <section class="animate">
-    <h2>About Me</h2>
-    <p>Motivated and skilled Biotechnology graduate with strong laboratory skills, seeking a position as a Production Scientist where I can apply my technical expertise and thrive in industrial environments. I am passionate about biotechnology, molecular biology, and production processes, aiming to make a significant contribution in the life sciences industry.</p>
-  </section>
+  <!-- TWO-COLUMN UNIQUE STRUCTURE -->
+  <div class="container">
+    <!-- About Me -->
+    <div class="card animate">
+      <h2>About Me</h2>
+      <p>Motivated Biotechnology graduate with strong lab skills, seeking a Production Scientist role to apply technical expertise and contribute to life sciences innovations.</p>
+    </div>
 
-  <!-- EDUCATION -->
-  <section class="animate">
-    <h2>Education</h2>
-    <ul>
-      <li><b>BSc. (Hons) Biotechnology:</b> SLIIT – 4-year degree covering Biotechnology, Molecular Biology, Proteomics, and Genetics.</li>
-      <li><b>Advanced Level (A/L):</b> Biology Stream – Chemistry (B), Physics (C), Biology (C)</li>
-      <li><b>Ordinary Level (O/L):</b> Passed all subjects with Distinction passes</li>
-    </ul>
-  </section>
+    <!-- Skills -->
+    <div class="card animate">
+      <h2>Skills</h2>
+      <ul>
+        <li>Laboratory Techniques</li>
+        <li>Biotechnology & Molecular Biology</li>
+        <li>Team Collaboration</li>
+        <li>Data Analysis</li>
+      </ul>
+    </div>
 
-  <!-- SKILLS -->
-  <section class="animate">
-    <h2>Skills</h2>
-    <ul>
-      <li>Laboratory Techniques</li>
-      <li>Adobe Creative Suite Knowledge</li>
-      <li>Biotechnology & Molecular Biology</li>
-      <li>Team Collaboration</li>
-    </ul>
-  </section>
+    <!-- Education -->
+    <div class="card animate">
+      <h2>Education</h2>
+      <ul>
+        <li>BSc. (Hons) Biotechnology – SLIIT</li>
+        <li>A/L Biology Stream – Chemistry (B), Physics (C), Biology (C)</li>
+        <li>O/L – Distinction passes</li>
+      </ul>
+    </div>
 
-  <!-- LANGUAGES -->
-  <section class="animate">
-    <h2>Languages</h2>
-    <ul>
-      <li>English – Cambridge Preliminary (Merit)</li>
-      <li>English – Cambridge Key (Distinction)</li>
-    </ul>
-  </section>
+    <!-- Languages -->
+    <div class="card animate">
+      <h2>Languages</h2>
+      <ul>
+        <li>English – Cambridge Preliminary (Merit)</li>
+        <li>English – Cambridge Key (Distinction)</li>
+      </ul>
+    </div>
+  </div>
 
-  <!-- RESUME -->
-  <section class="animate">
+  <!-- Resume -->
+  <div class="card animate" style="max-width:400px; margin:40px auto; text-align:center;">
     <h2>Resume</h2>
     <a href="HS25510275_CV.pdf" class="button" target="_blank">Download My Resume</a>
-  </section>
+  </div>
 
-  <!-- CONTACT -->
-  <section class="contact animate">
+  <!-- Contact -->
+  <div class="contact animate">
     <h2>Contact</h2>
     <p>Email: pramudadias@gmail.com</p>
     <p>Phone: +94 76 0211 337</p>
     <p>Address: 46/2/6, Kompayahena Road, Homagama, Godagama</p>
-  </section>
+  </div>
 
-  <script>
-    const sections=document.querySelectorAll('.animate');
-    const reveal=()=>{
-      const trigger=window.innerHeight*0.85;
-      sections.forEach(sec=>{
-        const top=sec.getBoundingClientRect().top;
-        if(top<trigger){sec.classList.add('visible');}
-      });
-    }
-    window.addEventListener('scroll',reveal);
-    window.addEventListener('load',reveal);
-  </script>
+<script>
+  // Scroll reveal
+  const elements=document.querySelectorAll('.animate, .contact');
+  const reveal=()=>{
+    const trigger=window.innerHeight*0.85;
+    elements.forEach(el=>{
+      const top=el.getBoundingClientRect().top;
+      if(top<trigger){el.classList.add('visible');}
+    });
+  }
+  window.addEventListener('scroll',reveal);
+  window.addEventListener('load',reveal);
+</script>
 
 </body>
 </html>
