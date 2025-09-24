@@ -1,28 +1,23 @@
-<!-- FILE: index.html -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pramuda Dias — Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-  <header class="site-header fade-in">
-    <div class="container header-grid">
-      <div class="profile slide-in-left">
-        <img src="assets/profile-photo.jpg" alt="Pramuda Dias" class="avatar" />
-        <h1>Pramuda Dias</h1>
-        <p class="subtitle">BSc (Hons) Biotechnology — Production Scientist</p>
-        <a class="btn neon" href="assets/HS25510275_CV.pdf" download>Download Resume (PDF)</a>
-      </div>
-      <nav class="nav slide-in-right">
-        <ul>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">Pramuda Dias</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
@@ -32,130 +27,326 @@
     </div>
   </header>
 
-  <main class="container">
-    <section id="about" class="card glass fade-up">
-      <h2>About me</h2>
-      <p>Motivated and skilled biotechnology graduate with strong laboratory skills, seeking a position as a Production Scientist where I can apply my technical expertise and thrive in industrial environments.</p>
+  <section id="home" class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Hello, I'm <span>Pramuda Dias</span></h1>
+        <p>Biotechnology Graduate | Aspiring Production Scientist</p>
+        <div class="hero-buttons">
+          <a href="assets/HS25510275_CV.pdf" class="btn primary" download><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+          <a href="#contact" class="btn outline"><i class="fa-solid fa-envelope"></i> Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/profile-photo.jpg" alt="Profile Photo" />
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="about" class="section about-section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>Motivated biotech graduate with experience in lab techniques, seeking to deliver innovative solutions in production settings. (You can elaborate based on your CV.)</p>
+      </div>
     </section>
 
-    <section id="education" class="card glass fade-up">
-      <h2>Educational Qualifications</h2>
-      <ul>
-        <li><strong>BSc. (Hons) Biotechnology</strong>, Sri Lanka Institute of Information Technology</li>
-        <li><strong>Advanced Level Examination</strong>, Biological Sciences stream (Physics, Chemistry, Biology)</li>
-        <li><strong>Ordinary Level Examination</strong> — Distinction passes.</li>
-      </ul>
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experience</h2>
+        <!-- Fill in work / internship / projects -->
+        <div class="exp-item">
+          <h3>Internship / Lab Assistant</h3>
+          <span>Year – Institution / Company</span>
+          <p>Describe what you did (techniques used, responsibilities, accomplishments).</p>
+        </div>
+      </div>
     </section>
 
-    <section id="experience" class="card glass fade-up">
-      <h2>Work Experience</h2>
-      <p>No formal industry experience listed in the CV. Use this space to add internships, lab assistant roles or part-time roles you have done.</p>
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="project-item">
+          <h3>Project Title 1</h3>
+          <p>Short description. Tools / techniques used.</p>
+        </div>
+        <div class="project-item">
+          <h3>Project Title 2</h3>
+          <p>Short description. Tools / techniques used.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="projects" class="card glass fade-up">
-      <h2>Projects</h2>
-      <ul>
-        <li>Characterization of enzyme X — SDS-PAGE, spectrophotometry.</li>
-        <li>CRISPR-based gene edit simulation — in silico with annotation reports.</li>
-      </ul>
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skill-list">
+          <div class="skill"><span class="skill-name">PCR / Gel Electrophoresis</span></div>
+          <div class="skill"><span class="skill-name">Spectrophotometry</span></div>
+          <div class="skill"><span class="skill-name">Adobe Creative Suite</span></div>
+          <div class="skill"><span class="skill-name">English Communication</span></div>
+        </div>
+      </div>
     </section>
 
-    <section id="skills" class="card glass fade-up">
-      <h2>Other Skills</h2>
-      <ul>
-        <li>Laboratory techniques: PCR, Gel electrophoresis, Spectrophotometry</li>
-        <li>Software: Adobe Creative Suite</li>
-        <li>Languages: English (Cambridge Assessment — PET Merit, KET Distinction)</li>
-      </ul>
-    </section>
-
-    <section id="hobbies" class="card glass fade-up">
-      <h2>Hobbies</h2>
-      <p>Reading scientific literature, image editing, and open-source projects.</p>
-    </section>
-
-    <section id="contact" class="card glass fade-up contact-card">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:pramudadias@gmail.com">pramudadias@gmail.com</a></p>
-      <p>Phone: +94 76 0211 337</p>
-      <p>Address: 46/2/6, Kompayahena Road, Homagama, Godagama</p>
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:pramudadias@gmail.com">pramudadias@gmail.com</a></p>
+          <p><i class="fa-solid fa-phone"></i> +94 76 0211 337</p>
+          <p><i class="fa-solid fa-location-dot"></i> Homagama, Sri Lanka</p>
+        </div>
+        <div class="socials">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container">
-      <p>© <span id="year"></span> Pramuda Dias — Built for SC1172.</p>
+      <p>© <span id="year"></span> Pramuda Dias. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+styles.css
 
-
-<!-- FILE: styles.css -->
-:root{
-  --bg-gradient:linear-gradient(135deg, #1e3c72, #2a5298);
-  --card-glass:rgba(255,255,255,0.15);
-  --accent:#00c6ff;
-  --accent2:#0072ff;
-  --text:#f4f6fb;
+css
+Copy code
+/* Reset some basics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Poppins',sans-serif;background:var(--bg-gradient);color:var(--text);line-height:1.6}
-.container{max-width:1100px;margin:0 auto;padding:1rem}
-.header-grid{display:flex;gap:1rem;align-items:center;justify-content:space-between;padding:1rem}
-.profile{display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem}
-.avatar{width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid var(--accent);box-shadow:0 0 15px rgba(0,0,0,0.4)}
-h1{margin:0;font-size:2.5rem;font-weight:700;color:var(--accent)}
-.subtitle{margin:0;font-size:1.1rem;color:#dcdcdc}
-.nav ul{list-style:none;display:flex;gap:1.2rem}
-.nav a{text-decoration:none;color:#fff;font-weight:600;position:relative;transition:color 0.3s}
-.nav a:hover{color:var(--accent)}
-.nav a::after{content:'';position:absolute;width:0;height:2px;left:0;bottom:-4px;background:var(--accent);transition:0.3s}
-.nav a:hover::after{width:100%}
-.btn{padding:0.7rem 1.2rem;border:none;border-radius:40px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;font-weight:600;text-decoration:none;box-shadow:0 4px 15px rgba(0,0,0,0.3);transition:transform 0.3s,box-shadow 0.3s}
-.btn:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.4)}
-.card{padding:2rem;margin:2rem 0;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.25);backdrop-filter:blur(8px)}
-.glass{background:var(--card-glass);border:1px solid rgba(255,255,255,0.2)}
-.contact-card p{margin:0.25rem 0}
-.site-footer{padding:1.5rem 0;text-align:center;font-size:0.9rem;color:#ddd}
-@media(max-width:768px){.header-grid{flex-direction:column;align-items:center}.nav ul{flex-wrap:wrap;justify-content:center}}
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background: #0c0f22;
+  line-height: 1.6;
+}
 
-/* Animations */
-.fade-in{animation:fadeIn 1.5s ease-in}
-.slide-in-left{animation:slideInLeft 1.2s ease-out}
-.slide-in-right{animation:slideInRight 1.2s ease-out}
-.fade-up{opacity:0;transform:translateY(20px);animation:fadeUp 1s ease forwards}
-.neon{position:relative;overflow:hidden}
-.neon::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:rgba(255,255,255,0.3);transform:skewX(-20deg);transition:0.5s}
-.neon:hover::before{left:100%}
+/* Containers */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes slideInLeft{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:translateX(0)}}
-@keyframes slideInRight{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:translateX(0)}}
-@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(12,15,34, 0.9);
+  z-index: 1000;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #00c6ff;
+  text-decoration: none;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #00c6ff;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
 
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;  /* to offset navbar height */
+  min-height: 100vh;
+}
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.hero-text {
+  max-width: 500px;
+}
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+.hero-text h1 span {
+  color: #00c6ff;
+}
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #ccc;
+}
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.hero-image img {
+  width: 300px;
+  border-radius: 50%;
+  border: 4px solid #00c6ff;
+  box-shadow: 0 0 20px rgba(0,198,255,0.5);
+}
 
-<!-- FILE: script.js -->
-document.getElementById('year').textContent = new Date().getFullYear();
+/* Buttons */
+.btn {
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn.primary {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0,198,255,0.6);
+}
+.btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,198,255,0.8);
+}
+.btn.outline {
+  background: transparent;
+  border: 2px solid #00c6ff;
+  color: #00c6ff;
+}
+.btn.outline:hover {
+  background: #00c6ff;
+  color: #0c0f22;
+}
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-  });
-});
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #00c6ff;
+}
+.section p, .section ul {
+  color: #ddd;
+}
 
-// Reveal on scroll
-const faders=document.querySelectorAll('.fade-up');
-const appearOptions={threshold:0.2};
-const appearOnScroll=new IntersectionObserver((entries,observer)=>{
-  entries.forEach(entry=>{
-    if(!entry.isIntersecting)return;
-    entry.target.classList.add('appear');
-    observer.unobserve(entry.target);
-  });
-},appearOptions);
-faders.forEach(fader=>{appearOnScroll.observe(fader)});
+/* Experience / Projects */
+.exp-item, .project-item {
+  margin-bottom: 1.5rem;
+}
+.exp-item h3, .project-item h3 {
+  font-size: 1.3rem;
+  color: #fff;
+}
+.exp-item span {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Skills */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.skill {
+  background: rgba(255,255,255,0.1);
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Contact */
+.contact-info p {
+  margin-bottom: 0.8rem;
+  color: #ddd;
+}
+.socials a {
+  color: #00c6ff;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+  transition: color 0.3s;
+}
+.socials a:hover {
+  color: #0072ff;
+}
+
+/* Footer */
+.footer {
+  background: rgba(12,15,34, 0.8);
+  text-align: center;
+  padding: 2rem 0;
+  color: #aaa;
+}
+
+/* Smooth scroll and animation triggers */
+html {
+  scroll-behavior: smooth;
+}
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* IntersectionObserver script will add .appear on scroll */
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-image {
+    display: none; /* hide image at smaller view, or show smaller */
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+}
